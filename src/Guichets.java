@@ -5,7 +5,6 @@ public class Guichets {
     private Client[] guichets;
 
     public Guichets(int nb_guichets) {
-        // A completer
         this.guichets = new Client[nb_guichets];
         for(int i = 0; i < nb_guichets - 1; i++) {
             this.guichets[i] = null;

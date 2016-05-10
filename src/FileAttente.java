@@ -8,14 +8,12 @@ public class FileAttente {
     private int tailleFile;
 
     public FileAttente(int taille_file) {
-        // A completer
         this.clients = new LinkedList<>();
         this.tailleFile = taille_file;
     }
 
     public boolean estVide() {
         boolean vide = false;
-        // A completer
         if(this.clients.isEmpty()) {
             vide = true;
         }
@@ -32,7 +30,6 @@ public class FileAttente {
 
     public boolean estPremier(Client client) {
         boolean res = false;
-        // A completer
         if(this.clients.getFirst() == client) {
             res = true;
         }
@@ -41,7 +38,6 @@ public class FileAttente {
 
     public boolean entrer(Client client) {
         boolean res = false;
-        // A completer
         if(!(this.clients.size() == this.tailleFile)) {
             res = true;
             this.clients.add(client);
@@ -52,7 +48,6 @@ public class FileAttente {
 
     public boolean sortir(Client client) {
         boolean res = false;
-        // A completer
         if(this.estPremier(client)) {
             this.clients.remove(client);
             res = true;

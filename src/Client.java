@@ -33,7 +33,11 @@ public class Client extends Thread {
                             fin = this.attenteGuichet(guichet);
                         }
                     } else {
-                        this.file.entrer(this);
+                        boolean res = this.file.entrer(this);
+                        if(!res) {
+                            fin = true;
+                            System.out.println("Plus de place, le client " + this.toString() + " ressort. \n");
+                        }
                     }
 
                 } else {
@@ -50,7 +54,6 @@ public class Client extends Thread {
     }
 
     public boolean attenteGuichet(int numGuichet) {
-        boolean fin = false;
         this.etat = "Au guichet";
         try {
             sleep(3000);
